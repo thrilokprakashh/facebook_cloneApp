@@ -20,7 +20,7 @@ class Home extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 248, 245, 245),
+          backgroundColor: Color.fromARGB(255, 227, 18, 18),
           title: Text(
             "Facebook",
             style: TextStyle(
