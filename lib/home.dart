@@ -10,7 +10,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget thinDivider = Divider(
       thickness: 1,
-      color: Colors.grey[300],
+      color: const Color.fromARGB(255, 219, 30, 30),
     );
     Widget thickDivider = Divider(
       thickness: 10,
