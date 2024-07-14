@@ -1,7 +1,9 @@
+import 'package:facebook_clone/assets.dart';
 import 'package:facebook_clone/section/headerButtonSection.dart';
 import 'package:facebook_clone/section/statusSection.dart';
 import 'package:facebook_clone/section/storySection.dart';
 import 'package:facebook_clone/widgets/circularButton.dart';
+import 'package:facebook_clone/widgets/postCard.dart';
 import 'package:flutter/material.dart';
 import 'package:facebook_clone/section/roomSection.dart';
 
@@ -10,7 +12,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget thinDivider = Divider(
       thickness: 1,
-      color: Color.fromARGB(255, 208, 5, 5),
+      color: Colors.grey[300],
     );
     Widget thickDivider = Divider(
       thickness: 10,
@@ -51,6 +53,14 @@ class Home extends StatelessWidget {
             thickDivider,
             Storysection(),
             thickDivider,
+            PostCard(
+              name: "Mohanlal",
+              avatar: mohanlal,
+              PublichedAt: "5h",
+              postTitle: " Good old days !!",
+              postImage: lal1,
+              showBlueTick: true,
+            ),
           ],
         ),
       ),
