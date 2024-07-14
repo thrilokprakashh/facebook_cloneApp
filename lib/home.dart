@@ -3,6 +3,7 @@ import 'package:facebook_clone/section/headerButtonSection.dart';
 import 'package:facebook_clone/section/statusSection.dart';
 import 'package:facebook_clone/section/storySection.dart';
 import 'package:facebook_clone/widgets/circularButton.dart';
+import 'package:facebook_clone/widgets/headerButton.dart';
 import 'package:facebook_clone/widgets/postCard.dart';
 import 'package:flutter/material.dart';
 import 'package:facebook_clone/section/roomSection.dart';
@@ -47,7 +48,31 @@ class Home extends StatelessWidget {
           children: [
             Statussection(),
             thinDivider,
-            HeaderButtonSection(),
+            HeaderButtonSection(
+              buttonOne: headerButton(
+                buttonAction: () {
+                  print("Go live!!");
+                },
+                buttonColor: Colors.red,
+                buttonIcon: Icons.video_call,
+                buttonText: "Live",
+              ),
+              buttonTwo: headerButton(
+                buttonText: "Photo",
+                buttonIcon: Icons.photo_library,
+                buttonAction: () {
+                  print("Take photo");
+                },
+                buttonColor: Colors.green,
+              ),
+              buttonThree: headerButton(
+                  buttonText: "Room",
+                  buttonIcon: Icons.video_call,
+                  buttonAction: () {
+                    print("Create photo");
+                  },
+                  buttonColor: Colors.purple),
+            ),
             thickDivider,
             RoomSection(),
             thickDivider,
@@ -60,6 +85,9 @@ class Home extends StatelessWidget {
               postTitle: " Good old days !!",
               postImage: lal1,
               showBlueTick: true,
+              likeCount: "10k",
+              shareCount: "1k",
+              commentCount: "1k",
             ),
           ],
         ),

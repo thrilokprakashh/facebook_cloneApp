@@ -2,21 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class HeaderButtonSection extends StatelessWidget {
-  Widget headerButton({
-    @required buttonText,
-    @required ButtonIcon,
-    required Function() buttonAction,
-    required Color buttonColor,
-  }) {
-    return TextButton.icon(
-      onPressed: buttonAction,
-      icon: Icon(
-        ButtonIcon,
-        color: buttonColor,
-      ),
-      label: Text(buttonText),
-    );
-  }
+  final Widget buttonOne;
+  final Widget buttonTwo;
+  final Widget buttonThree;
+  HeaderButtonSection(
+      {required this.buttonOne,
+      required this.buttonTwo,
+      required this.buttonThree});
 
   @override
   Widget build(BuildContext context) {
@@ -29,29 +21,11 @@ class HeaderButtonSection extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          headerButton(
-              buttonAction: () {
-                print("Go Live");
-              },
-              ButtonIcon: Icons.video_call,
-              buttonColor: Colors.red,
-              buttonText: "Live"),
+          buttonOne,
           verticalDivider,
-          headerButton(
-              buttonAction: () {
-                print("Take photo");
-              },
-              ButtonIcon: Icons.photo_library,
-              buttonColor: Colors.green,
-              buttonText: "Photo"),
+          buttonTwo,
           verticalDivider,
-          headerButton(
-              buttonAction: () {
-                print("Create Chat Room!");
-              },
-              ButtonIcon: Icons.video_call,
-              buttonColor: Colors.purple,
-              buttonText: "Room"),
+          buttonThree,
         ],
       ),
     );

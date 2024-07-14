@@ -1,4 +1,5 @@
 import 'package:facebook_clone/assets.dart';
+import 'package:facebook_clone/section/headerButtonSection.dart';
 import 'package:facebook_clone/widgets/avatar.dart';
 import 'package:facebook_clone/widgets/blueTick.dart';
 import 'package:flutter/cupertino.dart';
@@ -13,6 +14,9 @@ class PostCard extends StatelessWidget {
   final String postTitle;
   final String postImage;
   final bool showBlueTick;
+  final String likeCount;
+  final String shareCount;
+  final String commentCount;
 
   PostCard({
     required this.avatar,
@@ -21,6 +25,9 @@ class PostCard extends StatelessWidget {
     required this.postTitle,
     required this.postImage,
     this.showBlueTick = false,
+    required this.likeCount,
+    required this.shareCount,
+    required this.commentCount,
   });
   @override
   Widget build(BuildContext context) {
@@ -31,6 +38,7 @@ class PostCard extends StatelessWidget {
           titleSecetion(),
           imageSection(),
           footerSection(),
+          HeaderButtonSection(),
         ],
       ),
     );
@@ -69,14 +77,14 @@ class PostCard extends StatelessWidget {
                 SizedBox(
                   width: 5,
                 ),
-                displayText(label: "10k"),
+                displayText(label: likeCount),
               ],
             ),
           ),
           Container(
             child: Row(
               children: [
-                displayText(label: "1k"),
+                displayText(label: commentCount),
                 SizedBox(
                   width: 5,
                 ),
@@ -84,11 +92,27 @@ class PostCard extends StatelessWidget {
                 SizedBox(
                   width: 10,
                 ),
-                displayText(label: "1k"),
+                displayText(label: shareCount),
                 SizedBox(
                   width: 10,
                 ),
                 displayText(label: "Shares"),
+                SizedBox(width: 10),
+                Avatar(
+                  displayImage: avatar,
+                  displayStatus: false,
+                  width: 25,
+                  height: 25,
+                ),
+                IconButton(
+                  onPressed: () {
+                    print("Drop down pressed!");
+                  },
+                  icon: Icon(
+                    Icons.arrow_drop_down,
+                    color: Colors.grey[700],
+                  ),
+                )
               ],
             ),
           )
