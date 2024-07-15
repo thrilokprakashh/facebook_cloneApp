@@ -2,6 +2,7 @@ import 'package:facebook_clone/assets.dart';
 import 'package:facebook_clone/section/headerButtonSection.dart';
 import 'package:facebook_clone/widgets/avatar.dart';
 import 'package:facebook_clone/widgets/blueTick.dart';
+import 'package:facebook_clone/widgets/headerButton.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -38,7 +39,32 @@ class PostCard extends StatelessWidget {
           titleSecetion(),
           imageSection(),
           footerSection(),
-          HeaderButtonSection(),
+          Divider(
+            color: Colors.grey[300],
+            thickness: 1,
+          ),
+          HeaderButtonSection(
+              buttonOne: headerButton(
+                  buttonText: "Like",
+                  buttonIcon: Icons.thumb_up_alt_outlined,
+                  buttonAction: () {
+                    print("Like this post");
+                  },
+                  buttonColor: Colors.grey),
+              buttonTwo: headerButton(
+                  buttonText: "Comment",
+                  buttonIcon: Icons.message_outlined,
+                  buttonAction: () {
+                    print("comment on this post");
+                  },
+                  buttonColor: Colors.grey),
+              buttonThree: headerButton(
+                  buttonText: "Share",
+                  buttonIcon: Icons.share_outlined,
+                  buttonAction: () {
+                    print("Share this post");
+                  },
+                  buttonColor: Colors.grey))
         ],
       ),
     );
@@ -129,16 +155,18 @@ class PostCard extends StatelessWidget {
   }
 
   Widget titleSecetion() {
-    return Container(
-      padding: EdgeInsets.only(bottom: 5),
-      child: Text(
-        postTitle == null ? "" : postTitle,
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 16,
-        ),
-      ),
-    );
+    return postTitle != null && postTitle != ""
+        ? Container(
+            padding: EdgeInsets.only(bottom: 5),
+            child: Text(
+              postTitle == null ? "" : postTitle,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 16,
+              ),
+            ),
+          )
+        : SizedBox();
   }
 
   Widget postCardHeader() {
