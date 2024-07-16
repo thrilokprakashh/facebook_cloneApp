@@ -13,7 +13,13 @@ String nivin = "assets/dp/Nivin Pauly.jpg";
 
 // posts
 String pic1 = "assets/posts/pic1.webp";
-String dq1 = "assets/posts/dq1.jpeg";
+String dq1 = "assets/posts/dq1.png";
 String lal1 = "assets/posts/lal1.jpg";
 String mom1 = "assets/posts/mom1.jpg";
 String vin1 = "assets/posts/vin1.jpg";
+String the1 = "assets/posts/the1.png";
+
+// Post Titles
+String junctionTile =
+    """The best homecoming we could ever ask for !! Thank you Kochi for the immense love, participation and encouragement ! Our cinema is viewed and loved across the world and our goal with “King Of Kotha” is to reach the maximum audiences as widely as we can at the same time !!
+""";
