@@ -1,3 +1,4 @@
+import 'package:facebook_clone/assets.dart';
 import 'package:facebook_clone/widgets/suggestionCard.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +27,63 @@ class SuggestionSection extends StatelessWidget {
             height: 390,
             child: ListView(
               scrollDirection: Axis.horizontal,
-              children: [SuggestionCard()],
+              children: [
+                SuggestionCard(
+                  name: "Thrilok prakashan",
+                  avatar: thrilok,
+                  mutualFriends: "1 Mutual Friend",
+                  addFriend: () {
+                    print("Request Friend");
+                  },
+                  removeFriend: () {
+                    print("RemovedFriend");
+                  },
+                ),
+                SuggestionCard(
+                  name: "Thrilok prakashan",
+                  avatar: thrilok,
+                  mutualFriends: "1 Mutual Friend",
+                  addFriend: () {
+                    print("Request Friend");
+                  },
+                  removeFriend: () {
+                    print("RemovedFriend");
+                  },
+                ),
+                SuggestionCard(
+                  name: "Thrilok prakashan",
+                  avatar: thrilok,
+                  mutualFriends: "1 Mutual Friend",
+                  addFriend: () {
+                    print("Request Friend");
+                  },
+                  removeFriend: () {
+                    print("RemovedFriend");
+                  },
+                ),
+                SuggestionCard(
+                  name: "Thrilok prakashan",
+                  avatar: thrilok,
+                  mutualFriends: "1 Mutual Friend",
+                  addFriend: () {
+                    print("Request Friend");
+                  },
+                  removeFriend: () {
+                    print("RemovedFriend");
+                  },
+                ),
+                SuggestionCard(
+                  name: "Thrilok prakashan",
+                  avatar: thrilok,
+                  mutualFriends: "1 Mutual Friend",
+                  addFriend: () {
+                    print("Request Friend");
+                  },
+                  removeFriend: () {
+                    print("RemovedFriend");
+                  },
+                )
+              ],
             ),
           )
         ],

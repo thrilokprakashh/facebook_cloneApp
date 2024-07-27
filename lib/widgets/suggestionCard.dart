@@ -1,10 +1,22 @@
 import 'package:facebook_clone/assets.dart';
+import 'package:facebook_clone/widgets/avatar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class SuggestionCard extends StatelessWidget {
-  const SuggestionCard({super.key});
+  final String avatar;
+  final String name;
+  final String mutualFriends;
+  final void Function() addFriend;
+  final void Function() removeFriend;
+  SuggestionCard({
+    required this.avatar,
+    required this.name,
+    required this.mutualFriends,
+    required this.addFriend,
+    required this.removeFriend,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +38,19 @@ class SuggestionCard extends StatelessWidget {
       right: 0,
       left: 0,
       child: Container(
+        decoration: BoxDecoration(
+            color: Colors.grey[200],
+            border: Border.all(color: Colors.grey[300]!, width: 1),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(10),
+              bottomRight: Radius.circular(10),
+            )),
         height: 140,
-        color: Colors.grey[200],
         child: Column(
           children: [
             ListTile(
-              title: Text("Thrilok prakashan"),
-              subtitle: Text("4 Mutual friends"),
+              title: Text(name != null ? name : ""),
+              subtitle: Text(mutualFriends != null ? mutualFriends : ""),
             ),
             Container(
               padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
@@ -40,9 +58,7 @@ class SuggestionCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   iconButton(
-                    buttonAction: () {
-                      print("Request friendship");
-                    },
+                    buttonAction: addFriend,
                     buttonIcon: Icons.add_moderator,
                     buttonColor: Colors.blue,
                     buttonTextColor: Colors.white,
@@ -50,11 +66,9 @@ class SuggestionCard extends StatelessWidget {
                     buttonText: "Add Friend",
                   ),
                   blankButton(
-                      buttonAction: () {
-                        print("Remove suggestion");
-                      },
+                      buttonAction: removeFriend,
                       buttonText: "Remove",
-                      buttonColor: Colors.grey,
+                      buttonColor: Colors.grey[300]!,
                       buttonTextColor: Colors.black)
                 ],
               ),
@@ -113,11 +127,15 @@ Widget suggestionImage() {
     child: ClipRRect(
       borderRadius: BorderRadius.only(
           topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-      child: Image.asset(
-        thrilok,
-        height: 250,
-        fit: BoxFit.cover,
-      ),
+      child: avatar != null
+          ? Image.asset(
+              thrilok,
+              height: 250,
+              fit: BoxFit.cover,
+            )
+          : SizedBox(),
     ),
   );
 }
+
+mixin avatar {}
