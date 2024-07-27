@@ -13,7 +13,7 @@ String nivin = "assets/dp/Nivin Pauly.jpg";
 
 // posts
 String pic1 = "assets/posts/pic1.webp";
-String dq1 = "assets/posts/dq1.png";
+String dq1 = "assets/posts/Dq1.png";
 String lal1 = "assets/posts/lal1.jpg";
 String mom1 = "assets/posts/mom1.jpg";
 String vin1 = "assets/posts/vin1.jpg";

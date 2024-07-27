@@ -2,6 +2,7 @@ import 'package:facebook_clone/assets.dart';
 import 'package:facebook_clone/section/headerButtonSection.dart';
 import 'package:facebook_clone/section/statusSection.dart';
 import 'package:facebook_clone/section/storySection.dart';
+import 'package:facebook_clone/section/suggestionSection.dart';
 import 'package:facebook_clone/widgets/circularButton.dart';
 import 'package:facebook_clone/widgets/headerButton.dart';
 import 'package:facebook_clone/widgets/postCard.dart';
@@ -113,6 +114,8 @@ class Home extends StatelessWidget {
               shareCount: "1.5k",
               commentCount: "4k",
             ),
+            thickDivider,
+            SuggestionSection(),
             thickDivider,
             PostCard(
               name: "Mammootty",
