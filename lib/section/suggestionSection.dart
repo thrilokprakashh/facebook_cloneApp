@@ -40,9 +40,9 @@ class SuggestionSection extends StatelessWidget {
                   },
                 ),
                 SuggestionCard(
-                  name: "Thrilok prakashan",
-                  avatar: thrilok,
-                  mutualFriends: "1 Mutual Friend",
+                  name: "iamstrell",
+                  avatar: strell,
+                  mutualFriends: "8 Mutual Friend",
                   addFriend: () {
                     print("Request Friend");
                   },
@@ -51,9 +51,9 @@ class SuggestionSection extends StatelessWidget {
                   },
                 ),
                 SuggestionCard(
-                  name: "Thrilok prakashan",
-                  avatar: thrilok,
-                  mutualFriends: "1 Mutual Friend",
+                  name: "sebin cyriac",
+                  avatar: fishingfreak,
+                  mutualFriends: " ",
                   addFriend: () {
                     print("Request Friend");
                   },
@@ -62,9 +62,9 @@ class SuggestionSection extends StatelessWidget {
                   },
                 ),
                 SuggestionCard(
-                  name: "Thrilok prakashan",
-                  avatar: thrilok,
-                  mutualFriends: "1 Mutual Friend",
+                  name: "sujithbhakthan",
+                  avatar: sujith,
+                  mutualFriends: "3 Mutual Friend",
                   addFriend: () {
                     print("Request Friend");
                   },
@@ -73,9 +73,9 @@ class SuggestionSection extends StatelessWidget {
                   },
                 ),
                 SuggestionCard(
-                  name: "Thrilok prakashan",
-                  avatar: thrilok,
-                  mutualFriends: "1 Mutual Friend",
+                  name: "nikhilayyankovil",
+                  avatar: nikhil,
+                  mutualFriends: "2 Mutual Friend",
                   addFriend: () {
                     print("Request Friend");
                   },

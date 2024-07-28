@@ -8,7 +8,7 @@ String vinayakan = "assets/dp/vinayakan.jpg";
 String strell = "assets/dp/strell.png";
 String prithviraj = "assets/dp/raj.jpg";
 String fishingfreak = "assets/dp/fishing.png";
-String sujith = "assets/dp/sujith.png";
+String sujith = "assets/dp/sujith1.png";
 String nivin = "assets/dp/Nivin Pauly.jpg";
 
 // posts
