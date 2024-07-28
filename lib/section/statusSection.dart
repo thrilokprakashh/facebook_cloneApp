@@ -7,7 +7,7 @@ class Statussection extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: Avatar(
-        displayImage: thrilok,
+        displayImage: nivin,
         displayStatus: false,
       ),
       title: TextField(

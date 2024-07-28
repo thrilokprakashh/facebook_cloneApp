@@ -10,14 +10,14 @@ class Storysection extends StatelessWidget {
       child: ListView(scrollDirection: Axis.horizontal, children: [
         Storycard(
           labelText: "Add To Story",
-          avatar: thrilok,
-          story: thrilok,
+          avatar: nivin,
+          story: nivin,
           createStoryStatus: true,
         ),
         Storycard(
-          labelText: "Nikhil",
-          avatar: nikhil,
-          story: pic1,
+          labelText: "fahadh faasil",
+          avatar: fahadh,
+          story: fpic,
           displayBorder: true,
         ),
         Storycard(

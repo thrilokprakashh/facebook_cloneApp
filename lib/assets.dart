@@ -9,7 +9,8 @@ String strell = "assets/dp/strell.png";
 String prithviraj = "assets/dp/raj.jpg";
 String fishingfreak = "assets/dp/fishing.png";
 String sujith = "assets/dp/sujith1.png";
-String nivin = "assets/dp/Nivin Pauly.jpg";
+String nivin = "assets/dp/nivin.jpg";
+String fahadh = "assets/dp/fahadh.jpg";
 
 // posts
 String pic1 = "assets/posts/pic1.webp";
@@ -18,6 +19,7 @@ String lal1 = "assets/posts/lal1.jpg";
 String mom1 = "assets/posts/mom1.jpg";
 String vin1 = "assets/posts/vin1.jpg";
 String the1 = "assets/posts/the1.png";
+String fpic = "assets/posts/fpic.jpg";
 
 // Post Titles
 String junctionTile =
