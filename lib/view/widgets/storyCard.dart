@@ -1,6 +1,6 @@
-import 'package:facebook_clone/assets.dart';
-import 'package:facebook_clone/widgets/avatar.dart';
-import 'package:facebook_clone/widgets/circularButton.dart';
+import 'package:facebook_clone/models/utils/constans/color_constants.dart';
+import 'package:facebook_clone/view/widgets/avatar.dart';
+import 'package:facebook_clone/view/widgets/circularButton.dart';
 import 'package:flutter/material.dart';
 
 class Storycard extends StatelessWidget {
@@ -32,7 +32,7 @@ class Storycard extends StatelessWidget {
             child: createStoryStatus
                 ? CircularButton(
                     buttonIcon: Icons.add,
-                    iconColor: Colors.blue,
+                    iconColor: ColorConstants.primaryColor,
                     buttonAction: () {
                       print("create new story!");
                     },
@@ -51,7 +51,7 @@ class Storycard extends StatelessWidget {
             child: Text(
               labelText != null ? labelText : "N/A",
               style: TextStyle(
-                  color: Colors.white,
+                  color: ColorConstants.mainWhite,
                   fontSize: 16,
                   fontWeight: FontWeight.bold),
             ),

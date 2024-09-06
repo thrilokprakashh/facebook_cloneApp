@@ -1,5 +1,7 @@
 import 'package:facebook_clone/assets.dart';
-import 'package:facebook_clone/widgets/avatar.dart';
+import 'package:facebook_clone/models/utils/constans/color_constants.dart';
+import 'package:facebook_clone/view/widgets/avatar.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -64,11 +66,11 @@ class RoomSection extends StatelessWidget {
       child: OutlinedButton.icon(
         icon: Icon(
           Icons.video_call,
-          color: Colors.purple,
+          color: ColorConstants.buttonThree,
         ),
         label: Text(
           "Create \n Room",
-          style: TextStyle(color: Colors.blue),
+          style: TextStyle(color: ColorConstants.primaryColor),
         ),
         onPressed: () {
           print("create chat room");

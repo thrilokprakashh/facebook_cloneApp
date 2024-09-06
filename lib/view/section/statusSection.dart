@@ -1,4 +1,5 @@
-import 'package:facebook_clone/widgets/avatar.dart';
+import 'package:facebook_clone/models/utils/constans/color_constants.dart';
+import 'package:facebook_clone/view/widgets/avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:facebook_clone/assets.dart';
 
@@ -13,7 +14,7 @@ class Statussection extends StatelessWidget {
       title: TextField(
         decoration: InputDecoration(
           hintText: "Whats on your mind?",
-          hintStyle: TextStyle(color: Colors.black),
+          hintStyle: TextStyle(color: ColorConstants.black),
           enabledBorder: InputBorder.none,
           focusedBorder: InputBorder.none,
           errorBorder: InputBorder.none,

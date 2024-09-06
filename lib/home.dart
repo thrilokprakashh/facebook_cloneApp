@@ -1,34 +1,38 @@
 import 'package:facebook_clone/assets.dart';
-import 'package:facebook_clone/section/headerButtonSection.dart';
-import 'package:facebook_clone/section/statusSection.dart';
-import 'package:facebook_clone/section/storySection.dart';
-import 'package:facebook_clone/section/suggestionSection.dart';
-import 'package:facebook_clone/widgets/circularButton.dart';
-import 'package:facebook_clone/widgets/headerButton.dart';
-import 'package:facebook_clone/widgets/postCard.dart';
+import 'package:facebook_clone/models/utils/constans/color_constants.dart';
+import 'package:facebook_clone/view/section/headerButtonSection.dart';
+import 'package:facebook_clone/view/section/roomSection.dart';
+import 'package:facebook_clone/view/section/statusSection.dart';
+import 'package:facebook_clone/view/section/storySection.dart';
+import 'package:facebook_clone/view/section/suggestionSection.dart';
+import 'package:facebook_clone/view/widgets/circularButton.dart';
+import 'package:facebook_clone/view/widgets/headerButton.dart';
+import 'package:facebook_clone/view/widgets/postCard.dart';
+
 import 'package:flutter/material.dart';
-import 'package:facebook_clone/section/roomSection.dart';
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget thinDivider = Divider(
       thickness: 1,
-      color: Colors.grey[300],
+      color: ColorConstants.grey.withOpacity(.3),
     );
     Widget thickDivider = Divider(
       thickness: 10,
-      color: Colors.grey[300],
+      color: ColorConstants.grey.withOpacity(.3),
     );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: ColorConstants.mainWhite,
           title: Text(
             "Facebook",
             style: TextStyle(
-                color: Colors.blue, fontSize: 26, fontWeight: FontWeight.bold),
+                color: ColorConstants.primaryColor,
+                fontSize: 26,
+                fontWeight: FontWeight.bold),
           ),
           actions: [
             CircularButton(
@@ -54,7 +58,7 @@ class Home extends StatelessWidget {
                 buttonAction: () {
                   print("Go live!!");
                 },
-                buttonColor: Colors.red,
+                buttonColor: ColorConstants.buttonOne,
                 buttonIcon: Icons.video_call,
                 buttonText: "Live",
               ),
@@ -64,7 +68,7 @@ class Home extends StatelessWidget {
                 buttonAction: () {
                   print("Take photo");
                 },
-                buttonColor: Colors.green,
+                buttonColor: ColorConstants.buttonTwo,
               ),
               buttonThree: headerButton(
                   buttonText: "Room",
@@ -72,7 +76,7 @@ class Home extends StatelessWidget {
                   buttonAction: () {
                     print("Create photo");
                   },
-                  buttonColor: Colors.purple),
+                  buttonColor: ColorConstants.buttonThree),
             ),
             thickDivider,
             RoomSection(),

@@ -30,6 +30,7 @@ class Avatar extends StatelessWidget {
               displayImage,
               width: width,
               height: height,
+              fit: BoxFit.cover,
             ),
           ),
         ),
@@ -41,9 +42,10 @@ class Avatar extends StatelessWidget {
                   width: 15,
                   height: 15,
                   decoration: BoxDecoration(
-                      color: Colors.greenAccent,
-                      shape: BoxShape.circle,
-                      border: Border.all(color: Colors.white, width: 2)),
+                    color: Colors.greenAccent,
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Colors.white, width: 2),
+                  ),
                 ),
               )
             : SizedBox()

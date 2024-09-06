@@ -1,5 +1,6 @@
 import 'package:facebook_clone/assets.dart';
-import 'package:facebook_clone/widgets/suggestionCard.dart';
+import 'package:facebook_clone/view/widgets/suggestionCard.dart';
+
 import 'package:flutter/material.dart';
 
 class SuggestionSection extends StatelessWidget {
@@ -85,7 +86,7 @@ class SuggestionSection extends StatelessWidget {
                 )
               ],
             ),
-          )
+          ),
         ],
       ),
     );

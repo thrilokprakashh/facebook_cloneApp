@@ -116,7 +116,7 @@ class SuggestionCard extends StatelessWidget {
         ),
       ),
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(buttonColor),
+        backgroundColor: WidgetStatePropertyAll(buttonColor),
       ),
       onPressed: buttonAction,
     );

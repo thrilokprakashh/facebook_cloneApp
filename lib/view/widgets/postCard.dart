@@ -1,14 +1,14 @@
-import 'package:facebook_clone/assets.dart';
-import 'package:facebook_clone/section/headerButtonSection.dart';
-import 'package:facebook_clone/widgets/avatar.dart';
-import 'package:facebook_clone/widgets/blueTick.dart';
-import 'package:facebook_clone/widgets/headerButton.dart';
+import 'package:facebook_clone/models/utils/constans/color_constants.dart';
+import 'package:facebook_clone/view/section/headerButtonSection.dart';
+import 'package:facebook_clone/view/widgets/avatar.dart';
+import 'package:facebook_clone/view/widgets/blueTick.dart';
+import 'package:facebook_clone/view/widgets/headerButton.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
-class PostCard extends StatelessWidget {
+class PostCard extends StatefulWidget {
   final String avatar;
   final String name;
   final String PublichedAt;
@@ -30,6 +30,13 @@ class PostCard extends StatelessWidget {
     required this.shareCount,
     required this.commentCount,
   });
+
+  @override
+  State<PostCard> createState() => _PostCardState();
+}
+
+class _PostCardState extends State<PostCard> {
+  bool isLiked = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -44,27 +51,32 @@ class PostCard extends StatelessWidget {
             thickness: 1,
           ),
           HeaderButtonSection(
-              buttonOne: headerButton(
-                  buttonText: "Like",
-                  buttonIcon: Icons.thumb_up_alt_outlined,
-                  buttonAction: () {
-                    print("Like this post");
-                  },
-                  buttonColor: Colors.grey),
-              buttonTwo: headerButton(
-                  buttonText: "Comment",
-                  buttonIcon: Icons.message_outlined,
-                  buttonAction: () {
-                    print("comment on this post");
-                  },
-                  buttonColor: Colors.grey),
-              buttonThree: headerButton(
-                  buttonText: "Share",
-                  buttonIcon: Icons.share_outlined,
-                  buttonAction: () {
-                    print("Share this post");
-                  },
-                  buttonColor: Colors.grey))
+            buttonOne: headerButton(
+                buttonText: "Like",
+                buttonIcon:
+                    isLiked ? Icons.thumb_up : Icons.thumb_up_alt_outlined,
+                buttonAction: () {
+                  setState(() {
+                    isLiked = !isLiked;
+                  });
+                  print("Like this post");
+                },
+                buttonColor: isLiked ? Colors.blue : Colors.grey),
+            buttonTwo: headerButton(
+                buttonText: "Comment",
+                buttonIcon: Icons.message_outlined,
+                buttonAction: () {
+                  print("comment on this post");
+                },
+                buttonColor: ColorConstants.grey),
+            buttonThree: headerButton(
+                buttonText: "Share",
+                buttonIcon: Icons.share_outlined,
+                buttonAction: () {
+                  print("Share this post");
+                },
+                buttonColor: ColorConstants.grey),
+          ),
         ],
       ),
     );
@@ -96,21 +108,21 @@ class PostCard extends StatelessWidget {
                       BoxDecoration(color: Colors.blue, shape: BoxShape.circle),
                   child: Icon(
                     Icons.thumb_up,
-                    color: Colors.white,
+                    color: ColorConstants.mainWhite,
                     size: 10,
                   ),
                 ),
                 SizedBox(
                   width: 5,
                 ),
-                displayText(label: likeCount),
+                displayText(label: widget.likeCount),
               ],
             ),
           ),
           Container(
             child: Row(
               children: [
-                displayText(label: commentCount),
+                displayText(label: widget.commentCount),
                 SizedBox(
                   width: 5,
                 ),
@@ -118,14 +130,14 @@ class PostCard extends StatelessWidget {
                 SizedBox(
                   width: 10,
                 ),
-                displayText(label: shareCount),
+                displayText(label: widget.shareCount),
                 SizedBox(
                   width: 10,
                 ),
                 displayText(label: "Shares"),
                 SizedBox(width: 10),
                 Avatar(
-                  displayImage: avatar,
+                  displayImage: widget.avatar,
                   displayStatus: false,
                   width: 25,
                   height: 25,
@@ -150,12 +162,12 @@ class PostCard extends StatelessWidget {
   Widget imageSection() {
     return Container(
       padding: EdgeInsets.only(top: 5, bottom: 5),
-      child: Image.asset(postImage),
+      child: Image.asset(widget.postImage),
     );
   }
 
   Widget titleSecetion() {
-    return postTitle != null && postTitle != ""
+    return widget.postTitle != null && widget.postTitle != ""
         ? Container(
             padding: EdgeInsets.only(
               left: 10,
@@ -163,9 +175,9 @@ class PostCard extends StatelessWidget {
               bottom: 5,
             ),
             child: Text(
-              postTitle == null ? "" : postTitle,
+              widget.postTitle == null ? "" : widget.postTitle,
               style: TextStyle(
-                color: Colors.black,
+                color: ColorConstants.black,
                 fontSize: 16,
               ),
             ),
@@ -176,24 +188,24 @@ class PostCard extends StatelessWidget {
   Widget postCardHeader() {
     return ListTile(
       leading: Avatar(
-        displayImage: avatar,
+        displayImage: widget.avatar,
         displayStatus: false,
       ),
       title: Row(
         children: [
           Text(
-            name,
-            style: TextStyle(color: Colors.black),
+            widget.name,
+            style: TextStyle(color: ColorConstants.black),
           ),
           SizedBox(
             width: 10,
           ),
-          showBlueTick ? BluTick() : SizedBox(),
+          widget.showBlueTick ? BluTick() : SizedBox(),
         ],
       ),
       subtitle: Row(
         children: [
-          Text(PublichedAt == null ? "" : PublichedAt),
+          Text(widget.PublichedAt == null ? "" : widget.PublichedAt),
           SizedBox(
             width: 10,
           ),
