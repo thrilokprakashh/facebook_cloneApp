@@ -1,4 +1,4 @@
-import 'package:facebook_clone/assets.dart';
+import 'package:facebook_clone/models/utils/constans/assets_constants.dart';
 import 'package:facebook_clone/models/utils/constans/color_constants.dart';
 import 'package:facebook_clone/view/section/headerButtonSection.dart';
 import 'package:facebook_clone/view/section/roomSection.dart';
@@ -11,7 +11,7 @@ import 'package:facebook_clone/view/widgets/postCard.dart';
 
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class Homescreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget thinDivider = Divider(

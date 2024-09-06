@@ -1,4 +1,4 @@
-import 'package:facebook_clone/assets.dart';
+import 'package:facebook_clone/models/utils/constans/assets_constants.dart';
 import 'package:facebook_clone/view/widgets/suggestionCard.dart';
 
 import 'package:flutter/material.dart';
