@@ -20,6 +20,8 @@ String mom1 = "assets/posts/mom1.jpg";
 String vin1 = "assets/posts/vin1.jpg";
 String the1 = "assets/posts/the1.png";
 String fpic = "assets/posts/fpic.jpg";
+String join =
+    'assets/posts/Screenshot_2024-10-02-16-10-25-22_a23b203fd3aafc6dcb84e438dda678b6.jpg';
 
 // Post Titles
 String junctionTile =
