@@ -1,5 +1,6 @@
 import 'package:facebook_clone/models/utils/constans/assets_constants.dart';
 import 'package:facebook_clone/models/utils/constans/color_constants.dart';
+import 'package:facebook_clone/view/menu/menu_page.dart';
 import 'package:facebook_clone/view/section/headerButtonSection.dart';
 import 'package:facebook_clone/view/section/roomSection.dart';
 import 'package:facebook_clone/view/section/statusSection.dart';
@@ -42,8 +43,14 @@ class Homescreen extends StatelessWidget {
               },
             ),
             CircularButton(
-              buttonIcon: Icons.chat,
+              buttonIcon: Icons.menu,
               buttonAction: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MenuPage(),
+                  ),
+                );
                 print(" messenger appears!");
               },
             ),

@@ -12,6 +12,8 @@ class WhatsUrNamePage extends StatefulWidget {
 final _formKey = GlobalKey<FormState>();
 TextEditingController _firstNameController = TextEditingController();
 TextEditingController _lastNameController = TextEditingController();
+String firstName = "";
+String lastName = "";
 
 class _WhatsUrNamePageState extends State<WhatsUrNamePage> {
   @override
@@ -92,6 +94,8 @@ class _WhatsUrNamePageState extends State<WhatsUrNamePage> {
               InkWell(
                 onTap: () {
                   if (_formKey.currentState?.validate() ?? false) {
+                    firstName = _firstNameController.text;
+                    lastName = _lastNameController.text;
                     Navigator.push(
                       context,
                       MaterialPageRoute(

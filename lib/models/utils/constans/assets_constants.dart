@@ -22,6 +22,7 @@ String the1 = "assets/posts/the1.png";
 String fpic = "assets/posts/fpic.jpg";
 String join =
     'assets/posts/Screenshot_2024-10-02-16-10-25-22_a23b203fd3aafc6dcb84e438dda678b6.jpg';
+String otp = 'assets/posts/WhatsApp Image 2024-10-04 at 00.43.52.png';
 
 // Post Titles
 String junctionTile =

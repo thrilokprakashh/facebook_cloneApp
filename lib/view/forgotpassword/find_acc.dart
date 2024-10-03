@@ -1,4 +1,5 @@
-import 'package:facebook_clone/view/checkemail/check_email.dart';
+import 'package:facebook_clone/view/checkNumber/check_No_screen.dart';
+
 import 'package:facebook_clone/view/forgotpassword/forgot_password.dart';
 
 import 'package:flutter/material.dart';
@@ -91,7 +92,7 @@ class _FindAccState extends State<FindAcc> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => CheckEmail(),
+                          builder: (context) => CheckNoScreen(),
                         ),
                       );
                     }
