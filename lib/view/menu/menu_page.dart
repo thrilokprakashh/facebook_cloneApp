@@ -298,13 +298,54 @@ class _MenuPageState extends State<MenuPage> {
                   itemBuilder: (context, index) => InkWell(
                         onTap: () {
                           if (stDataList[index]["title"] == "Log out") {
-                            Navigator.pushAndRemoveUntil(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => LoginPage(),
-                              ),
-                              (route) => false,
-                            );
+                            {
+                              showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return AlertDialog(
+                                    title: Text(
+                                      "Log out?",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                    content: Text(
+                                      "Are you sure you want to log out?",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        child: Text(
+                                          "Yes",
+                                          style: TextStyle(color: Colors.grey),
+                                        ),
+                                        onPressed: () {
+                                          Navigator.pushAndRemoveUntil(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => LoginPage(),
+                                            ),
+                                            (route) => false,
+                                          );
+                                        },
+                                      ),
+                                      SizedBox(
+                                        width: 80,
+                                      ),
+                                      TextButton(
+                                        child: Text(
+                                          "No",
+                                          style: TextStyle(color: Colors.blue),
+                                        ),
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            }
                           }
                         },
                         child: Container(
