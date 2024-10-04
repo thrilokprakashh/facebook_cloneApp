@@ -28,3 +28,7 @@ String otp = 'assets/posts/WhatsApp Image 2024-10-04 at 00.43.52.png';
 String junctionTile =
     """The best homecoming we could ever ask for !! Thank you Kochi for the immense love, participation and encouragement ! Our cinema is viewed and loved across the world and our goal with “King Of Kotha” is to reach the maximum audiences as widely as we can at the same time !!
 """;
+
+class ImageConst {
+  static const logo = 'assets/posts/facebook-circle-logo-png.png';
+}

@@ -1,4 +1,4 @@
-import 'package:facebook_clone/view/login_page/login_page.dart';
+import 'package:facebook_clone/view/splash_screen/splash_screen.dart';
 
 import 'package:flutter/material.dart';
 
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: SplashScreen(),
     );
   }
 }
