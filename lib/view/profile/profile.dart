@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:facebook_clone/models/utils/constans/assets_constants.dart';
 import 'package:facebook_clone/view/join_facebook/join_facebook.dart';
 import 'package:facebook_clone/view/tab_bar/Photos_page.dart';
@@ -167,8 +169,13 @@ class _ProfileState extends State<Profile> {
                   height: 200,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage(
-                          "https://i.pinimg.com/564x/d3/96/a5/d396a57e05b8cf013040472c5d9fc6eb.jpg"),
+                      fit: BoxFit.cover,
+                      image: imagePath != null
+                          ? Image.file(
+                              File(imagePath!),
+                            ).image
+                          : NetworkImage(
+                              "https://i.pinimg.com/564x/d3/96/a5/d396a57e05b8cf013040472c5d9fc6eb.jpg"),
                     ),
                   ),
                   child: Row(
