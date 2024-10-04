@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   scroll_date_picker: ^3.8.0
   intl_phone_field2: ^3.3.4
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:

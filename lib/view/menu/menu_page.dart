@@ -1,4 +1,5 @@
 import 'package:facebook_clone/models/utils/constans/assets_constants.dart';
+import 'package:facebook_clone/view/join_facebook/join_facebook.dart';
 import 'package:facebook_clone/view/login_page/login_page.dart';
 import 'package:facebook_clone/view/profile/profile.dart';
 import 'package:facebook_clone/view/whtas_your_name/whats_ur_name_page.dart';
@@ -188,7 +189,15 @@ class _MenuPageState extends State<MenuPage> {
                                                     const Color.fromARGB(
                                                         255, 209, 203, 203),
                                                 child: IconButton(
-                                                  onPressed: () {},
+                                                  onPressed: () {
+                                                    Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            JoinFacebook(),
+                                                      ),
+                                                    );
+                                                  },
                                                   icon: Icon(
                                                     Icons.add,
                                                     size: 30,
@@ -241,7 +250,14 @@ class _MenuPageState extends State<MenuPage> {
                           backgroundColor:
                               const Color.fromARGB(255, 209, 203, 203),
                           child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => JoinFacebook(),
+                                ),
+                              );
+                            },
                             icon: Icon(Icons.add),
                           ),
                         ),
