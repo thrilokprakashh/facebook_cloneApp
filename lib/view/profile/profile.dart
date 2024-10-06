@@ -160,283 +160,290 @@ class _ProfileState extends State<Profile> {
             )
           ],
         ),
-        body: Column(
-          children: [
-            Stack(
-              children: [
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  height: 200,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: imagePath != null
-                          ? Image.file(
-                              File(imagePath!),
-                            ).image
-                          : NetworkImage(
-                              "https://i.pinimg.com/564x/d3/96/a5/d396a57e05b8cf013040472c5d9fc6eb.jpg"),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Stack(
+                children: [
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    height: 200,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: imagePath != null
+                            ? Image.file(
+                                File(imagePath!),
+                              ).image
+                            : NetworkImage(
+                                "https://i.pinimg.com/564x/d3/96/a5/d396a57e05b8cf013040472c5d9fc6eb.jpg"),
+                      ),
                     ),
-                  ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Spacer(),
-                      CircleAvatar(
-                        backgroundColor: Colors.grey[200],
-                        child: IconButton(
-                          onPressed: () {
-                            showModalBottomSheet(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(10),
-                                ),
-                              ),
-                              context: context,
-                              builder: (context) => ConstrainedBox(
-                                constraints: BoxConstraints(maxHeight: 170),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(15),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          CircleAvatar(
-                                            radius: 25,
-                                            backgroundColor: Colors.grey[300],
-                                            child: Icon(Icons.camera_alt),
-                                          ),
-                                          SizedBox(
-                                            width: 5,
-                                          ),
-                                          TextButton(
-                                            onPressed: () async {
-                                              final ImagePicker picker =
-                                                  ImagePicker();
-                                              final XFile? uploadImage =
-                                                  await picker.pickImage(
-                                                      source:
-                                                          ImageSource.camera);
-                                              if (uploadImage != null) {
-                                                print(uploadImage.toString());
-                                                imagePath = uploadImage.path;
-                                                setState(() {});
-                                              }
-                                            },
-                                            child: Text(
-                                              "Take Photo",
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.w600,
-                                                  fontSize: 15,
-                                                  color: Colors.black),
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            width: 5,
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: 20,
-                                      ),
-                                      Row(
-                                        children: [
-                                          CircleAvatar(
-                                            radius: 25,
-                                            backgroundColor: Colors.grey[300],
-                                            child: Icon(
-                                              Icons.folder_open,
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            width: 10,
-                                          ),
-                                          TextButton(
-                                            onPressed: () async {
-                                              final ImagePicker picker =
-                                                  ImagePicker();
-                                              final XFile? uploadImage =
-                                                  await picker.pickImage(
-                                                      source:
-                                                          ImageSource.gallery);
-                                              if (uploadImage != null) {
-                                                print(uploadImage.toString());
-                                                imagePath = uploadImage.path;
-                                                setState(() {});
-                                              }
-                                            },
-                                            child: Text(
-                                              "Upload Photo",
-                                              style: TextStyle(
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.w500,
-                                                  color: Colors.black),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Spacer(),
+                        CircleAvatar(
+                          backgroundColor: Colors.grey[200],
+                          child: IconButton(
+                            onPressed: () {
+                              showModalBottomSheet(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
                                   ),
                                 ),
-                              ),
-                            );
-                          },
-                          icon: Icon(Icons.camera_alt),
+                                context: context,
+                                builder: (context) => ConstrainedBox(
+                                  constraints: BoxConstraints(maxHeight: 170),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(15),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            CircleAvatar(
+                                              radius: 25,
+                                              backgroundColor: Colors.grey[300],
+                                              child: Icon(Icons.camera_alt),
+                                            ),
+                                            SizedBox(
+                                              width: 5,
+                                            ),
+                                            TextButton(
+                                              onPressed: () async {
+                                                final ImagePicker picker =
+                                                    ImagePicker();
+                                                final XFile? uploadImage =
+                                                    await picker.pickImage(
+                                                        source:
+                                                            ImageSource.camera);
+                                                if (uploadImage != null) {
+                                                  print(uploadImage.toString());
+                                                  imagePath = uploadImage.path;
+                                                  setState(() {});
+                                                }
+                                              },
+                                              child: Text(
+                                                "Take Photo",
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w600,
+                                                    fontSize: 15,
+                                                    color: Colors.black),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: 5,
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        Row(
+                                          children: [
+                                            CircleAvatar(
+                                              radius: 25,
+                                              backgroundColor: Colors.grey[300],
+                                              child: Icon(
+                                                Icons.folder_open,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            TextButton(
+                                              onPressed: () async {
+                                                final ImagePicker picker =
+                                                    ImagePicker();
+                                                final XFile? uploadImage =
+                                                    await picker.pickImage(
+                                                        source: ImageSource
+                                                            .gallery);
+                                                if (uploadImage != null) {
+                                                  print(uploadImage.toString());
+                                                  imagePath = uploadImage.path;
+                                                  setState(() {});
+                                                }
+                                              },
+                                              child: Text(
+                                                "Upload Photo",
+                                                style: TextStyle(
+                                                    fontSize: 15,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: Colors.black),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                            icon: Icon(Icons.camera_alt),
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-                Positioned(
-                  left: 15,
-                  bottom: 10,
-                  child: Stack(
-                    children: [
-                      Avatar(
-                        displayImage: nivin,
-                        displayStatus: false,
-                        height: 150,
-                        width: 150,
-                        displayBorder: true,
-                      ),
-                      SizedBox(
-                        height: 80,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-              child: Row(
-                children: [
-                  Text(
-                    firstName,
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Text(
-                    lastName,
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  Positioned(
+                    left: 15,
+                    bottom: 10,
+                    child: Stack(
+                      children: [
+                        Avatar(
+                          displayImage: nivin,
+                          displayStatus: false,
+                          height: 150,
+                          width: 150,
+                          displayBorder: true,
+                        ),
+                        SizedBox(
+                          height: 80,
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                          color: Colors.blue[700],
-                          borderRadius: BorderRadius.circular(8)),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.add,
-                            color: Colors.white,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "Add to story",
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                        ],
+              SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                child: Row(
+                  children: [
+                    Text(
+                      firstName,
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      lastName,
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            color: Colors.blue[700],
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.add,
+                              color: Colors.white,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "Add to story",
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Expanded(
-                    child: Container(
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            color: Colors.grey[300],
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Row(
+                          children: [
+                            Icon(Icons.edit),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "Edit profile",
+                              style: TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Container(
                       padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                           color: Colors.grey[300],
                           borderRadius: BorderRadius.circular(8)),
-                      child: Row(
-                        children: [
-                          Icon(Icons.edit),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "Edit profile",
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
+                      child: Icon(Icons.more_horiz),
                     ),
+                  ],
+                ),
+              ),
+              Divider(
+                thickness: 7,
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              TabBar(
+                isScrollable: false,
+                labelColor: Colors.blue,
+                indicatorColor: Colors.blue,
+                unselectedLabelColor: Colors.blue,
+                indicatorSize: TabBarIndicatorSize.tab,
+                indicatorWeight: 3,
+                dividerHeight: 0,
+                labelStyle:
+                    TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
+                tabs: [
+                  Tab(
+                    text: "Posts",
                   ),
-                  SizedBox(
-                    width: 10,
+                  Tab(
+                    text: "Photos",
                   ),
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        borderRadius: BorderRadius.circular(8)),
-                    child: Icon(Icons.more_horiz),
+                  Tab(
+                    text: "Reels",
                   ),
                 ],
               ),
-            ),
-            Divider(
-              thickness: 7,
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            TabBar(
-              isScrollable: false,
-              labelColor: Colors.blue,
-              indicatorColor: Colors.blue,
-              unselectedLabelColor: Colors.blue,
-              indicatorSize: TabBarIndicatorSize.tab,
-              indicatorWeight: 3,
-              dividerHeight: 0,
-              labelStyle: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
-              tabs: [
-                Tab(
-                  text: "Posts",
+              SizedBox(
+                height: 500,
+                child: TabBarView(
+                  children: [
+                    PostsPage(),
+                    PhotosPage(),
+                    ReelsPages(),
+                  ],
                 ),
-                Tab(
-                  text: "Photos",
-                ),
-                Tab(
-                  text: "Reels",
-                ),
-              ],
-            ),
-            Expanded(
-              child: TabBarView(
-                children: [
-                  PostsPage(),
-                  PhotosPage(),
-                  ReelsPages(),
-                ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
