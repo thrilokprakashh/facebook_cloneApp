@@ -1,3 +1,4 @@
+import 'package:facebook_clone/controller/dataBaseController.dart';
 import 'package:facebook_clone/main.dart';
 import 'package:facebook_clone/view/forgotpassword/find_acc.dart';
 
@@ -20,6 +21,15 @@ bool passwordVisible = true;
 
 class _LoginPageState extends State<LoginPage> {
   @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (timeStamp) async {
+        await DatabaseController.initsharedPref();
+      },
+    );
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
@@ -129,11 +139,14 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
-                      onPressed: () {
+                      onPressed: () async {
                         setState(() {});
                         if (_formKey.currentState!.validate()) {
-                          if (_emailController.text == email &&
-                              _passwordController.text == password) {
+                          await DatabaseController.Getdata();
+                          final storedEmail = DatabaseController.storedEmail;
+                          final storedPass = DatabaseController.storedPassword;
+                          if (storedEmail == _emailController.text &&
+                              storedPass == _passwordController.text) {
                             Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(

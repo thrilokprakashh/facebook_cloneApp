@@ -1,4 +1,5 @@
-import 'package:facebook_clone/main.dart';
+import 'package:facebook_clone/controller/dataBaseController.dart';
+
 import 'package:facebook_clone/view/login_page/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -175,8 +176,8 @@ class _RegistrationState extends State<Registration> {
                     onPressed: () {
                       setState(() {});
                       if (_formKey.currentState!.validate()) {
-                        email = _emailController.text;
-                        password = _confirmPasswordController.text;
+                        DatabaseController.register(
+                            _emailController.text, _passwordController.text);
                         Navigator.push(
                           context,
                           MaterialPageRoute(
